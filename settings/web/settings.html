@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Whisper Voice Assistant Settings</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="images/Whisp.ico">
+</head>
+<body>
+    <div class="Page">
+        <div class="Buttons">
+            <button onclick="OpenMainSettings()" id="firstButton">Основное</button>
+            <button onclick="OpenMusicSettings()" id="secondButton">Музыка</button>
+            <!-- <button onclick="">Кастом</button> -->
+        </div>
+        <div class="Image">
+            <img src="images/Karen.jpg">
+        </div>
+        <section id="mainPage">
+            <div class="MainPageSettings">
+                <div class="MainSettingsBlock">
+                    <h2>Озвучка:</h2>
+                    <div class="MainSettingsButtons">
+                        <button id="WhisperID" onclick="SetVoiceID(1)">Whisper</button>
+                        <button id="KarenID" onclick="SetVoiceID(2)">Karen</button>
+                    </div>
+                    <h2>Использовать озвучку:</h2>
+                    <div class="MainSettingsButtons">
+                        <button id="YesVoice" onclick="SetUseVoice('True')">Да</button>
+                        <button id="NoVoice" onclick="SetUseVoice('False')">Нет</button>
+                    </div>
+                    <h2>Требовать имя:</h2>
+                    <div class="MainSettingsButtons">
+                        <button id="YesSay" onclick="SetNeedSayKey('True')">Да</button>
+                        <button id="NoSay" onclick="SetNeedSayKey('False')">Нет</button>
+                    </div>
+                    <h2>Имена:</h2>
+                        <input id="namesInput">
+                    <button class="SaveButton" onclick="SaveMainSettings()">Сохранить!</button>
+                </div>
+            </div>
+        </section> 
+
+        <section id="musicPage" style="display: none;">
+            <div class="MainPageSettings">
+                <div class="MainSettingsBlock">
+                    <h2>Платформа:</h2>
+                    <div class="MainSettingsButtons">
+                        <button id="Spotify" onclick="SetPlatform('spotify')">Spotify</button>
+                        <button id="Yandex" onclick="SetPlatform('yandexmusic')">Yandex</button>
+                    </div>
+                    <h2>Задержка Spotify:</h2>
+                    <div class="MusicToggler">
+                        <button onclick="minusSpotifyTiming()">-</button>
+                        <input id="spotifyTiming">
+                        <button onclick="plusSpotifyTiming()">+</button>
+                    </div>
+                    <h2>Задержка YandexMusic:</h2>
+                    <div class="MusicToggler">
+                        <button onclick="minusYandexTiming()">-</button>
+                        <input id="yandexTiming">
+                        <button onclick="plusYandexTiming()">+</button>
+                    </div>
+                    <h2>Путь к платформе:</h2>
+                    <input id="platformPath">
+                    <button class="SaveButton" onclick="SaveMusicSettings()">Сохранить!</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="customPage" style="display: none;">
+            <div class="MainPageSettings">
+                <div class="MainSettingsBlock">
+                    <h2>Платформа:</h2>
+                    <div class="MainSettingsButtons">
+                        <button>Spotify</button>
+                        <button>Yandex</button>
+                    </div>
+                    <h2>Задержка Spotify:</h2>
+                    <div class="MusicToggler">
+                        <button onclick="minusSpotifyTiming()">-</button>
+                        <input id="spotifyTiming">
+                        <button onclick="plusSpotifyTiming()">+</button>
+                    </div>
+                    <h2>Задержка YandexMusic:</h2>
+                    <div class="MusicToggler">
+                        <button onclick="minusYandexTiming()">-</button>
+                        <input id="yandexTiming">
+                        <button onclick="plusYandexTiming()">+</button>
+                    </div>
+                    <h2>Путь к платформе:</h2>
+                    <input id="platformPath">
+                    <button class="SaveButton" id="SaveMusicButton" onclick="">Сохранить!</button>
+                </div>
+            </div>
+        </section> -->
+
+    </div>
+
+
+    
+    <script>
+        window.resizeTo(500, 900);
+        window.onresize = function () {window.resizeTo(600, 950);}
+        
+    </script>
+    <script src="eel.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
